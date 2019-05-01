@@ -1,0 +1,11 @@
+delta dConfigNueva {
+	adds {
+		package org.pl.eshopping.general;
+
+		public class Config {
+			public static final String URL = "jdbc:mysql://127.0.0.1:3306/tienda";
+			public static final String NOMBRE_USUARIO = "root";
+			public static final String CONTRASENA_USUARIO = "abcd1234.";
+		}
+	}
+}

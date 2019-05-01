@@ -1,0 +1,27 @@
+delta dConexionNueva {
+	adds {
+		package org.pl.eshopping.bd;
+
+		import java.sql.Connection;
+		import java.sql.DriverManager;
+		import java.sql.SQLException;
+		import org.pl.eshopping.general.Config;
+
+		public class Conexion {
+			private static final String url = Config.URL;
+			private static final String username = Config.NOMBRE_USUARIO;
+			private static final String password = Config.CONTRASENA_USUARIO;
+			public static Connection getConexion() {
+				try {
+					Connection connection = DriverManager.getConnection(url, username,
+						password);
+					System.out.println("Database connected!");
+					return connection;
+				}
+				catch(SQLException e) {
+					throw new IllegalStateException("Cannot connect the database!", e);
+				}
+			}
+		}
+	}
+}
